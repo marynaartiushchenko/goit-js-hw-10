@@ -1,4 +1,4 @@
-import "flatpickr/dist/flatpickr.min.css";
+import flatpickr from "flatpickr";
 
 const datetimePicker = flatpickr("#datetime-picker", {
     enableTime: true,
