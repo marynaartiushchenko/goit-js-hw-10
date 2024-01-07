@@ -7,6 +7,7 @@
 @import url('./reset.css');
 @import url('./header.css');
 @import 'flatpickr/dist/flatpickr.min.css';
+@import url('./1-timer.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -24,16 +25,11 @@
   -webkit-text-size-adjust: 100%;
 }
 
-body {
-  font-family: Arial, sans-serif;
+/* body {
+  font-family: sans-serif;
   text-align: center;
   margin: 50px;
-}
-
-#datetime-picker {
-  padding: 10px;
-  font-size: 16px;
-}
+} */
 
 button {
   padding: 10px;

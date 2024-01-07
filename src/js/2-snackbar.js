@@ -50,6 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
         message: `❌ Rejected promise in ${error}ms`,
         position: 'topRight',
       });
+    } finally {
+      form.reset(); // Очищення полів форми після завершення обробки промісу
     }
   });
 });
