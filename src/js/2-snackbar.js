@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const state = selectedStateInput.value;
 
+    form.reset();
+
     const promise = new Promise((resolve, reject) => {
       if (state === 'fulfilled') {
         setTimeout(() => {
@@ -50,8 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
         message: `❌ Rejected promise in ${error}ms`,
         position: 'topRight',
       });
-    } finally {
-      form.reset(); // Очищення полів форми після завершення обробки промісу
     }
   });
 });

@@ -1,6 +1,8 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
+const startButton = document.querySelector('[data-start]');
+
 const datetimePicker = flatpickr("#datetime-picker", {
   enableTime: true,
   time_24hr: true,
@@ -14,9 +16,9 @@ const datetimePicker = flatpickr("#datetime-picker", {
 
     if (selectedTime <= currentTime) {
       alert('Please choose a date in the future');
-      document.querySelector('[data-start]').disabled = true;
+      startButton.disabled = true;
     } else {
-      document.querySelector('[data-start]').disabled = false;
+      startButton.disabled = false;
     }
   },
 });
@@ -65,10 +67,13 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-document.querySelector('[data-start]').addEventListener('click', () => {
+// Disable the button when the page loads
+startButton.disabled = true;
+
+startButton.addEventListener('click', () => {
   const selectedDate = datetimePicker.selectedDates[0];
   const endTime = selectedDate.getTime();
 
-  document.querySelector('[data-start]').disabled = true; // Disable the button after clicking
+  startButton.disabled = true; // Disable the button after clicking
   startCountdown(endTime);
 });
